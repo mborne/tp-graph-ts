@@ -53,6 +53,9 @@ export class Graph {
         throw new VertexNotFound(`vertex with id=${id} not found`);
     }
 
+    /**
+     * Find a vertex by coordinate (strict equality)
+     */
     findVertexByCoordinate(c: Coordinate): Vertex {
         for (const vertex of this.vertices) {
             if (vertex.coordinate[0] == c[0] && vertex.coordinate[1] == c[1]) {
@@ -60,6 +63,21 @@ export class Graph {
             }
         }
         throw new VertexNotFound(`vertex with coordinate=${JSON.stringify(c)} not found`);
+    }
+
+    /**
+     * Find a vertex by coordinate or create it.
+     */
+    getOrCreateVertex(c: Coordinate): Vertex {
+        try {
+            return this.findVertexByCoordinate(c);
+        }finally{
+            const vertex = new Vertex();
+            vertex.id = (this.vertices.length+1).toString();
+            vertex.coordinate = c;
+            this.vertices.push(vertex);
+            return vertex;
+        }
     }
 
 }

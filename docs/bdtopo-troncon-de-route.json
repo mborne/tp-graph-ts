@@ -1,0 +1,43 @@
+{
+    "type": "Feature",
+    "properties": {
+        "cleabs_travail": "METRROTT0000002291961020",
+        "cleabs_ge": "TRONROUT0000002277384294",
+        "etat_de_l_objet": "En service",
+        "date_de_mise_en_service": null,
+        "nature": "Route à 1 chaussée",
+        "position_par_rapport_au_sol": "0",
+        "importance": "5",
+        "nombre_de_voies": 2,
+        "largeur_de_chaussee": 4.0,
+        "itineraire_vert": false,
+        "sens_de_circulation": "Double sens",
+        "acces_vehicule_leger": "Libre",
+        "periode_de_fermeture": null,
+        "restriction_de_hauteur": null,
+        "restriction_de_poids_total": null,
+        "fictif": false,
+        "vitesse_moyenne_vl": 20,
+        "liens_vers_route_nommee": null,
+        "cpx_numero": null,
+        "cpx_numero_route_europeenne": null,
+        "cpx_classement_administratif": null,
+        "cpx_gestionnaire": null,
+        "cpx_toponyme_route_nommee": null,
+        "cpx_toponyme_iti_cyclable": null,
+        "cpx_toponyme_voie_verte": null
+    },
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                6.6841994,
+                47.1080685
+            ],
+            [
+                6.6843154,
+                47.1080855
+            ]
+        ]
+    }
+}

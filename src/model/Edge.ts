@@ -1,4 +1,7 @@
+import { LineString } from "geojson";
 import { Vertex } from "./Vertex";
+import length from "@turf/length";
+import { lineString } from "@turf/turf";
 
 /**
  * An edge with its source and target
@@ -8,8 +11,18 @@ export class Edge {
     source: Vertex;
     target: Vertex;
 
-    getCost() {
-        // TODO : distance
-        return 1.0;
+    getCost(): number {
+        return length(lineString(this.getGeometry().coordinates));
     }
+
+    getGeometry(): LineString {
+        return {
+            type: "LineString",
+            coordinates: [
+                this.source.coordinate,
+                this.target.coordinate
+            ]
+        }
+    }
+
 }
