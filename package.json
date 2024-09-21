@@ -1,0 +1,24 @@
+{
+  "name": "tp-graph-ts",
+  "version": "0.1.0",
+  "description": "[ENSG] TP de refactoring de code manipulant des graphes",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/chai": "^4.3.19",
+    "@types/mocha": "^10.0.8",
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "tsx": "^4.19.1"
+  }
+}
