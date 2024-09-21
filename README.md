@@ -1,5 +1,9 @@
 # tp-graph-ts
 
+[ENSG] TP de refactoring sur le calcul de plus court chemin dans un graphe en TypeScript
+
+## Description
+
 Ce dépôt correspond au projet de départ pour le TP de refactoring sur les graphes du [cours sur les patrons de conception](https://github.com/mborne/cours-patron-conception#readme) donné à l'ENSG.
 
 Le code est volontairement truffé d'erreurs de conception, l'idée du TP est d'y remédier progressivement.

@@ -1,12 +1,12 @@
 {
   "name": "tp-graph-ts",
   "version": "0.1.0",
-  "description": "[ENSG] TP de refactoring de code manipulant des graphes",
+  "description": "[ENSG] TP de refactoring sur le calcul de plus court chemin dans un graphe en TypeScript",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "author": "MBorne <mborne@users.noreply.github.com>",
   "license": "MIT",
   "private": true,
   "devDependencies": {
