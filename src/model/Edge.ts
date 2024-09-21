@@ -11,7 +11,7 @@ export class Edge {
     source: Vertex;
     target: Vertex;
 
-    getCost(): number {
+    getLength(): number {
         return length(lineString(this.getGeometry().coordinates));
     }
 

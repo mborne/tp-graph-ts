@@ -58,7 +58,7 @@ export class RoutingService {
              * Test if reachedVertex is reached with a better cost.
              * (Note that the cost is POSITIVE_INFINITY for unreached vertex)
              */
-            const newCost = vertex.cost + outEdge.getCost();
+            const newCost = vertex.cost + outEdge.getLength();
             if (newCost < reachedVertex.cost) {
                 reachedVertex.cost = newCost;
                 reachedVertex.reachingEdge = outEdge;

@@ -26,7 +26,7 @@ describe("test RoutingService", () => {
             }
         });
 
-        it("should produce valid edges with a positive cost", () => {
+        it("should produce valid edges with a positive length", () => {
             for (const edge of graph.edges) {
                 // check id
                 expect(edge.id).to.be.not.empty;
@@ -35,9 +35,9 @@ describe("test RoutingService", () => {
                 expect(edge.source).to.be.not.null;
                 expect(edge.target).to.be.not.null;
 
-                // cost is positive
-                const cost = edge.getCost();
-                expect(cost).to.be.greaterThan(0.0);
+                // length is positive
+                const length = edge.getLength();
+                expect(length).to.be.greaterThan(0.0);
             }
         });
 
