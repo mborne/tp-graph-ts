@@ -1,6 +1,6 @@
 import Coordinate from "./Coordinate";
 import { Edge } from "./Edge";
-import { VertexNotFound } from "./errors/VertexNotFound";
+import { VertexNotFound } from "../errors/VertexNotFound";
 import { Vertex } from "./Vertex";
 
 /**

@@ -7,4 +7,9 @@ export class Edge {
     id: string;
     source: Vertex;
     target: Vertex;
+
+    getCost() {
+        // TODO : distance
+        return 1.0;
+    }
 }
