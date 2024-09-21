@@ -1,6 +1,4 @@
-# tp-graph-ts
-
-[ENSG] TP de refactoring sur le calcul de plus court chemin dans un graphe en TypeScript
+# tp-refactoring-graph-ts
 
 ## Description
 
@@ -44,8 +42,8 @@ Les tests fonctionnels sont mis à disposition dans le dossier `test/` avec [tes
 
 Vous trouverez en particulier :
 
-* [test/model/Graph.spec.ts](test/model/Graph.spec.ts) qui procède à des tests de base sur la classe [src/model/Graph.ts](src/model/Graph.ts)
-* ... **TODO** ...
+* [test/model/Graph.spec.ts](test/model/Graph.spec.ts) pour les tests de base sur [src/model/Graph.ts](src/model/Graph.ts)
+* [test/routing/RoutingService.spec.ts](test/routing/RoutingService.spec.ts) pour les [src/routing/RoutingService.ts](src/routing/RoutingService.ts)
 
 ## Mises en garde
 
