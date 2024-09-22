@@ -12,8 +12,8 @@ describe("test RoutingService", () => {
 
         const graph = await loader.loadGraphFromFile(fileStore.getAbsolutePath('bdtopo-loray/troncon_de_route.geojson'));
 
-        it("should contains 47526 vertices and 47085 edges", () => {
-            expect(graph.vertices.length).to.equal(47526);
+        it("should contains 21437 vertices and 47085 edges", () => {
+            expect(graph.vertices.length).to.equal(21437);
             expect(graph.edges.length).to.equal(47085);
         });
 

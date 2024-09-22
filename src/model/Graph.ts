@@ -71,7 +71,7 @@ export class Graph {
     getOrCreateVertex(c: Coordinate): Vertex {
         try {
             return this.findVertexByCoordinate(c);
-        }finally{
+        }catch(error){
             const vertex = new Vertex();
             vertex.id = (this.vertices.length+1).toString();
             vertex.coordinate = c;

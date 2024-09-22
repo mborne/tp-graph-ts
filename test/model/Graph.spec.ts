@@ -80,4 +80,15 @@ describe("test Graph", () => {
 
     });
 
+    describe("test getOrCreateVertex", () => {
+
+        it("should not duplicate vertex", () => {
+            const g = createTestGraph01();
+            const a = g.getOrCreateVertex([0.0,0.0]);
+            const b = g.getOrCreateVertex([0.0,0.0]);
+            expect(a === b).to.be.true;
+        });
+
+    });
+
 });

@@ -5,6 +5,7 @@ import { FileStore } from './io/FileStore';
 import { Graph } from "./model/Graph";
 import { Edge } from "./model/Edge";
 import { Vertex } from "./model/Vertex";
+import path from "path";
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
@@ -21,11 +22,14 @@ bdtopoLoader.loadGraphFromFile(fileStore.getAbsolutePath('bdtopo-loray/troncon_d
   graphs[DEFAULT_RESOURCE_NAME] = graph;
 });
 
+// TODO : display public folder with an OpenLayer map
+app.use(express.static(path.resolve(__dirname,'../public')));
 
+/*
 app.get("/", (req: Request, res: Response) => {
-  // TODO : display public folder with an OpenLayer map
   res.send("Express + TypeScript Server");
 });
+*/
 
 app.get("/api/vertices", (req: Request, res: Response) => {
   const resourceName = DEFAULT_RESOURCE_NAME;
