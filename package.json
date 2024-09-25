@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "tsx src/server.ts",
-    "test": "mocha"
+    "test": "mocha",
+    "front-build": "vite build"
   },
   "author": "MBorne <mborne@users.noreply.github.com>",
   "license": "MIT",
@@ -15,9 +16,11 @@
     "@types/mocha": "^10.0.8",
     "chai": "^5.1.1",
     "mocha": "^10.7.3",
+    "ol": "latest",
     "ts-node": "^10.9.2",
     "tsc": "^2.0.4",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "vite": "^5.4.7"
   },
   "dependencies": {
     "@turf/length": "^7.1.0",

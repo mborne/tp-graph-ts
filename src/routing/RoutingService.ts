@@ -73,8 +73,7 @@ export class RoutingService {
      * it is the nearest vertex of the origin that is not already visited.
      */
     findNextVertex(): Vertex | null {
-        let minCost = Number.POSITIVE_INFINITY;
-        let result: Vertex | null = null;
+        let candidate: Vertex | null = null;
         for (const vertex of this.graph.vertices) {
             // already visited?
             if (vertex.visited) {
@@ -85,11 +84,11 @@ export class RoutingService {
                 continue;
             }
             // nearest from origin?
-            if (vertex.cost < minCost) {
-                result = vertex;
+            if (candidate == null || vertex.cost < candidate.cost) {
+                candidate = vertex;
             }
         }
-        return result;
+        return candidate;
     }
 
     /**

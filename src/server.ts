@@ -5,7 +5,9 @@ import { FileStore } from './io/FileStore';
 import { Graph } from "./model/Graph";
 import { Edge } from "./model/Edge";
 import { Vertex } from "./model/Vertex";
+import {RoutingService} from './routing/RoutingService';
 import path from "path";
+import { RouteNotFound } from "./errors/RouteNotFound";
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
@@ -22,15 +24,14 @@ bdtopoLoader.loadGraphFromFile(fileStore.getAbsolutePath('bdtopo-loray/troncon_d
   graphs[DEFAULT_RESOURCE_NAME] = graph;
 });
 
-// TODO : display public folder with an OpenLayer map
+/*
+ * display "public" folder (built from "front")
+ */
 app.use(express.static(path.resolve(__dirname,'../public')));
 
 /*
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-});
-*/
-
+ * Get vertices as a GeoJSON collection
+ */
 app.get("/api/vertices", (req: Request, res: Response) => {
   const resourceName = DEFAULT_RESOURCE_NAME;
   // convert vertices to a GeoJSON FeatureCollection
@@ -53,10 +54,12 @@ app.get("/api/vertices", (req: Request, res: Response) => {
 });
 
 
-
+/*
+ * Get edges as a GeoJSON collection
+ */
 app.get("/api/edges", (req: Request, res: Response) => {
   const resourceName = DEFAULT_RESOURCE_NAME;
-  // convert vertices to a GeoJSON FeatureCollection
+  // convert edges to a GeoJSON FeatureCollection
   const features = graphs[resourceName].edges.map((edge: Edge) => {
     return {
       type: "Feature",
@@ -71,6 +74,54 @@ app.get("/api/edges", (req: Request, res: Response) => {
     type: "FeatureCollection",
     features: features
   });
+});
+
+
+/*
+ * Find a path returning a route as a GeoJSON collection.
+ */
+app.get("/api/route", (req: Request, res: Response) => {
+  const resourceName = DEFAULT_RESOURCE_NAME;
+  const graph : Graph = graphs[resourceName];
+
+  // TODO validate params
+  const origin = req.query.origin as string;
+  const destination = req.query.destination as string;
+
+  const routing = new RoutingService(graph);
+  try {
+    const route = routing.findRoute(
+      graph.findVertexById(origin),
+      graph.findVertexById(destination)
+    );
+
+    const features = route.map((edge: Edge) => {
+      return {
+        type: "Feature",
+        properties: {
+          id: edge.id,
+          cost: edge.getLength()
+        },
+        geometry: edge.getGeometry()
+      }
+    });
+    return res.json({
+      type: "FeatureCollection",
+      features: features
+    });
+  }catch(e){
+    if ( e instanceof RouteNotFound ){
+      res.status(404).json({
+        type: "RouteNotFound",
+        message: `No route found from ${origin} to ${destination}`
+      })
+    }else{
+      res.status(500).json({
+        type: "SystemError",
+        message: "An system error occurs..."
+      })
+    }
+  }
 });
 
 

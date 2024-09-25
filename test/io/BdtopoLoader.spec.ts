@@ -1,7 +1,7 @@
 import "mocha";
 import { expect } from "chai";
 import { BdtopoLoader } from "../../src/io/BdtopoLoader";
-import { FileStore } from "../../src/io/Filestore";
+import { FileStore } from "../../src/io/FileStore";
 
 const fileStore = new FileStore();
 const loader = new BdtopoLoader();
