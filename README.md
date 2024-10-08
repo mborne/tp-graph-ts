@@ -21,6 +21,8 @@ Après avoir forké et cloner le dépôt :
 npm install
 # exécution des tests
 npm run test
+# démarrer l'API et le démonstrateur
+npm run start
 ```
 
 ## Organisation du dépôt
