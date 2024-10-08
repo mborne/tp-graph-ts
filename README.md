@@ -1,4 +1,4 @@
-# tp-refactoring-graph-ts
+# tp-graph-ts
 
 > **TRAVAIL EN COURS**
 
