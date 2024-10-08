@@ -1,5 +1,7 @@
 # tp-refactoring-graph-ts
 
+> **TRAVAIL EN COURS**
+
 ## Description
 
 Ce dépôt correspond au projet de départ pour le TP de refactoring sur les graphes du [cours sur les patrons de conception](https://github.com/mborne/cours-patron-conception#readme) donné à l'ENSG.
