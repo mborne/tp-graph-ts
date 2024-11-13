@@ -17,6 +17,8 @@ Après avoir forké et cloner le dépôt :
 ```bash
 # installation des dépendances
 npm install
+# contrôle des types
+npm run build
 # exécution des tests
 npm run test
 # démarrer l'API et le démonstrateur

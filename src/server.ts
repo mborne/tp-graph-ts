@@ -33,6 +33,8 @@ app.use(express.static(path.resolve(__dirname,'../public')));
  * Get vertices as a GeoJSON collection
  */
 app.get("/api/vertices", (req: Request, res: Response) => {
+  console.log(`GET /api/vertices...`);
+
   const resourceName = DEFAULT_RESOURCE_NAME;
   // convert vertices to a GeoJSON FeatureCollection
   const features = graphs[resourceName].vertices.map((vertex: Vertex) => {
@@ -58,6 +60,8 @@ app.get("/api/vertices", (req: Request, res: Response) => {
  * Get edges as a GeoJSON collection
  */
 app.get("/api/edges", (req: Request, res: Response) => {
+  console.log(`GET /api/vertices...`);
+
   const resourceName = DEFAULT_RESOURCE_NAME;
   // convert edges to a GeoJSON FeatureCollection
   const features = graphs[resourceName].edges.map((edge: Edge) => {
@@ -87,6 +91,8 @@ app.get("/api/route", (req: Request, res: Response) => {
   // TODO validate params
   const origin = req.query.origin as string;
   const destination = req.query.destination as string;
+
+  console.log(`GET /api/route?origin=${origin}&destination=${destination} ...`);
 
   const routing = new RoutingService(graph);
   try {
