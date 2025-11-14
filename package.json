@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node node_modules/.bin/tsx src/server.ts",
+    "start": "tsx src/server.ts",
     "test": "mocha",
     "front-build": "vite build"
   },
@@ -13,24 +13,23 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@types/chai": "^4.3.19",
-    "@types/mocha": "^10.0.8",
-    "chai": "^5.1.1",
-    "mocha": "^10.7.3",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "chai": "^5.3.3",
+    "mocha": "^10.8.2",
     "ol": "latest",
     "ts-node": "^10.9.2",
-    "tsc": "^2.0.4",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.7"
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21"
   },
   "dependencies": {
-    "@turf/length": "^7.1.0",
-    "@turf/turf": "^7.1.0",
-    "@types/express": "^4.17.21",
-    "@types/geojson": "^7946.0.14",
-    "@types/node": "^22.5.5",
-    "express": "^4.21.0",
-    "express-requests-logger": "^4.0.1",
-    "tsx": "^4.19.1"
+    "@turf/length": "^7.2.0",
+    "@turf/turf": "^7.2.0",
+    "@types/express": "^4.17.25",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^22.19.1",
+    "express": "^4.21.2",
+    "express-requests-logger": "^4.0.3",
+    "tsx": "^4.20.6"
   }
 }
